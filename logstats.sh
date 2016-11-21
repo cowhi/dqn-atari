@@ -3,8 +3,8 @@
 echo -n "Number of episodes:       "
 grep Episode $1 | awk '{print $2}' | tail -1
 
-echo -n "Number of frames:         "
-grep Episode $1 | awk '{print $7}' | tr -d '(' | awk '{SUM=SUM+$1;COUNT=COUNT+1} END{printf "%'"'"'d\n",  SUM}'
+#echo -n "Number of frames:         "
+#grep Episode $1 | awk '{print $7}' | tr -d '(' | awk '{SUM=SUM+$1;COUNT=COUNT+1} END{printf "%'"'"'d\n",  SUM}'
 
 echo -n "Average score first 50:   "
 grep Episode $1 | head -50 | awk '{print $6}' | awk '{SUM=SUM+$1;COUNT=COUNT+1} END{print SUM/COUNT}'
@@ -47,4 +47,3 @@ grep Average.eval $1 | tail -5 | awk '{print $NF}' | tr  '\n' ',' | sed 's#,$#\n
 
 echo -n "Average of last 20 evals: "
 grep Average.eval $1 | tail -20 | awk '{print $NF}' | awk '{SUM=SUM+$1;COUNT=COUNT+1} END{print SUM/COUNT}'
-

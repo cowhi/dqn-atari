@@ -1,1 +1,3 @@
 *.pyc
+roms/
+game-out-*/
